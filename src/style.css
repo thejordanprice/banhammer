@@ -1,0 +1,80 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.centered {
+  text-align: center;
+  font-size: small;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.site-footer {
+  text-align: center;
+}
+
+.site-footer .icon {
+  font-size: 20px;
+}
+
+.site-footer .love .fa {
+  font-size: 12px;
+  margin-left: 2px;
+  margin-right: 2px;
+  color: #ff8181;
+}
+
+.upload-drop-zone {
+  height: 150px;
+  border-width: 2px;
+  margin-bottom: 20px;
+}
+
+.upload-drop-zone {
+  color: #ccc;
+  border-style: dashed;
+  border-color: #ccc;
+  line-height: 150px;
+  text-align: center
+}
+
+.upload-drop-zone.drop {
+  color: #222;
+  border-color: #222;
+}
+
+.upload-form {
+  width: 100%;
+}
+
+#upload-submit {
+  pull-right();
+}
+
+#array-window {
+  display: none;
+}
+
+#output {
+  height: 15em;
+}

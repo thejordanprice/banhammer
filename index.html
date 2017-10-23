@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">    
+  <link rel="stylesheet" type="text/css" href="./lib/css/bootstrap.min.css">
+  <script type="text/javascript" src="./lib/js/jquery-3.2.1.slim.min.js"></script>
+  <script type="text/javascript" src="./lib/js/popper.min.js"></script>
+  <script type="text/javascript" src="./lib/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./lib/js/37866a75b2.js"></script>
+  <link rel="stylesheet" type="text/css" href="./lib/css/darkly.css">
+  <link rel="stylesheet" type="text/css" href="./src/style.css">
+  <title>banhammer by thejordanprice</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#" target="_tab"><i class="fa fa-shield" aria-hidden="true"></i> banhammer</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://github.com/thejordanprice" target="_parent"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#"><i class="fa fa-user" aria-hidden="true"></i> thejordanprice</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<div class="container" id="array-window">
+  <span class="pull-right">
+    <button type="button" id="copy" class="btn btn-primary"><i class="fa fa-copy" aria-hidden="true"></i> Copy</button>
+  </span>&#xA0;
+  <textarea class="form-control" id="output"></textarea>
+</div>
+<div class="container" id="landing-window">
+  <p class="centered">Turns your logs into bans for Cisco iOS, Mikrotik RouterBoard, and UFW.</p>
+  <br>
+  <form action="" method="post" enctype="multipart/form-data" id="upload-form">
+    <div class="form-group">
+      <input type="file" name="files[]" id="upload-files" multiple>
+    </div>
+    <div class="form-group">
+      <label for="whitelist">Whitelist</label>
+      <input class="form-control" type="text" id="whitelist-input" placeholder="192.168.0.1,192.168.0.2,192.168.2.3">
+    </div>
+    <div class="form-group">
+      <label for="type-selector">Which Kind?</label>
+      <select class="form-control input-lg" default="UFW" id="type-selector">
+        <option>Cisco iOS</option>
+        <option>Mikrotik RouterBoard</option>
+        <option>UFW</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-sm btn-primary" id="upload-submit">Generate</button>
+  </form>
+  <br>
+  <div class="upload-drop-zone" id="drop-zone">
+    Drag and drop logs
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="site-footer">
+      <p class="love">made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://github.com/thejordanprice" target="_top">thejordanprice</a></p>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript" src="./src/banhammer.js"></script>
+</body>
+</html>
+
