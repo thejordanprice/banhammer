@@ -61,6 +61,12 @@ const startMagic = function(files) {
           output.append(string);
         };
       };
+      if (typeSelector.value === 'iptables') {
+        for (let ip in badAddresses) {
+          let string = 'sudo iptables -A INPUT -s ' + badAddresses[ip] + ' -j DROP\n';
+          output.append(string);
+        };
+      };
       if (typeSelector.value === 'Mikrotik RouterBoard') {
         for (let ip in badAddresses) {
           let string = '/ip firewall filter add action=drop chain=input comment=\'BANNED\' in-interface=ether1 src-address=' + badAddresses[ip] + '\n';
