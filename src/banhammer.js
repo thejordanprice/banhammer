@@ -50,14 +50,19 @@ const startMagic = function(files) {
           };
         };
       };
-      
+     
       landingWindow.style.display = 'none';
       arrayWindow.style.display = 'flex';
       
-      
       if (typeSelector.value === 'Cisco iOS') {
         for (let ip in badAddresses) {
-          let string = 'deny ip host ' + badAddresses[ip] + ' any log\n';
+          let string = '\
+ip access-list extended BLOCK\n\
+permit icmp any any echo-reply\n\
+permit icmp any any unreachable\n\
+deny icmp any any log\n\
+deny ip host ' + badAddresses[ip] + ' any log\n\
+permit ip any any';
           output.append(string);
         };
       };
@@ -79,8 +84,6 @@ const startMagic = function(files) {
           output.append(string);
         };
       };
-      
-      
       
     };
     reader.readAsText(blob);
