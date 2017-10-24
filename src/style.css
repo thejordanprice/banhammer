@@ -67,10 +67,6 @@ body {
   width: 100%;
 }
 
-#upload-submit {
-  pull-right();
-}
-
 #array-window {
   display: none;
 }
