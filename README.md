@@ -12,6 +12,8 @@ A small webapp to parse log files (such as auth.log); then return copy/paste fir
 
 Over the last year or so I've noticed an increase of IoT botnets floating around. After monitoring my incoming traffic over a lengthy period of time. I have realized that 90% of all the incoming attacks are SSH login attempts. The sad part is they keep coming even if you don't have any SSH servers listening. *Do you have a data cap?* :worried:
 
+Considering every bit is counted that goes through the modem; these attacks have caused my network to use *4.2GB* of data in *DROPPED* packets over the course of 10 days. After a while, this could be come a big problem.
+
 ##### Screenshot
 
 ![mobile](https://i.imgur.com/iiT2lq1.png)
