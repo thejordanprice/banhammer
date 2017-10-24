@@ -27,7 +27,7 @@ Bring your own log files and throw them into the mix. It should output something
     permit icmp any any echo-reply
     permit icmp any any unreachable
     deny icmp any any log
-    deny ip host 10.0.0.51 any log
+    deny ip host 20.0.0.0 any log
     permit ip any any
 
 Then copy that into whatever terminal is required for that particular model you have chosen.
