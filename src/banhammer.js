@@ -56,7 +56,7 @@ const startMagic = function(files) {
       
       if (typeSelector.value === 'Cisco iOS') {
         for (let ip in badAddresses) {
-          let string = 'deny ip host ' + badAddresses[ip] + ' any log';
+          let string = 'deny ip host ' + badAddresses[ip] + ' any log\n';
           output.append(string);
         };
       };
