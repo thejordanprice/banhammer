@@ -56,13 +56,7 @@ const startMagic = function(files) {
       
       if (typeSelector.value === 'Cisco iOS') {
         for (let ip in badAddresses) {
-          let string = '\
-ip access-list extended BLOCK\n\
-permit icmp any any echo-reply\n\
-permit icmp any any unreachable\n\
-deny icmp any any log\n\
-deny ip host ' + badAddresses[ip] + ' any log\n\
-permit ip any any';
+          let string = 'deny ip host ' + badAddresses[ip] + ' any log';
           output.append(string);
         };
       };
