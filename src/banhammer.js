@@ -22,10 +22,6 @@ const output = document.getElementById('output');
 
 const startMagic = function(files) {
 
-  //  for (let file in files) {
-  //    if (!files[file]) {
-  //     return;
-  //    };
   let file = 0;
 
   const reader = new FileReader();
@@ -67,6 +63,12 @@ const startMagic = function(files) {
       };
       output.append('permit ip any any\n');
     };
+    if (typeSelector.value === 'iptables') {
+      for (let ip in badAddresses) {
+        let string = 'sudo iptables -A INPUT -s ' + badAddresses[ip] + ' -j DROP\n';
+        output.append(string);
+      };
+    };
     if (typeSelector.value === 'Mikrotik RouterBoard') {
       for (let ip in badAddresses) {
         let string = '/ip firewall filter add action=drop chain=input comment=\'BANNED\' in-interface=ether1 src-address=' + badAddresses[ip] + '\n';
@@ -79,8 +81,6 @@ const startMagic = function(files) {
         output.append(string);
       };
     };
-
-
 
   };
   reader.readAsText(blob);
