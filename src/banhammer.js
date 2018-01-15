@@ -20,7 +20,7 @@ const typeSelector = document.getElementById('type-selector');
 const whitelistInput = document.getElementById('whitelist-input');
 const output = document.getElementById('output');
 
-const startMagic = function(files) {
+const startMagic = (files) => {
 
   let file = 0;
 
@@ -28,7 +28,7 @@ const startMagic = function(files) {
   let blob = new Blob([files[file]], {
     type: "text/plain"
   });
-  reader.onload = function() {
+  reader.onload = () => {
 
     let lines = this.result.split('\n');
     let badAddresses = [];
@@ -87,30 +87,30 @@ const startMagic = function(files) {
   // };
 };
 
-uploadForm.addEventListener('submit', function(event) {
+uploadForm.addEventListener('submit', (event) => {
   let uploadFiles = document.getElementById('upload-files').files;
   event.preventDefault();
   startMagic(uploadFiles);
 });
 
-dropZone.ondrop = function(event) {
+dropZone.ondrop = (event) => {
   event.preventDefault();
   this.className = 'upload-drop-zone';
   startMagic(event.dataTransfer.files);
 };
 
-dropZone.ondragover = function() {
+dropZone.ondragover = () => {
   this.className = 'upload-drop-zone drop';
   return false;
 };
 
-dropZone.ondragleave = function() {
+dropZone.ondragleave = () => {
   this.className = 'upload-drop-zone';
   return false;
 };
 
 document.getElementById('copy')
-  .addEventListener('click', function(event) {
+  .addEventListener('click', (event) => {
     document.getElementById('output').select();
     document.execCommand('copy');
     if (output.value) {
