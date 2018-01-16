@@ -20,7 +20,7 @@ const typeSelector = document.getElementById('type-selector');
 const whitelistInput = document.getElementById('whitelist-input');
 const output = document.getElementById('output');
 
-const startMagic = (files) => {
+const startMagic = function(files) {
 
   let file = 0;
 
