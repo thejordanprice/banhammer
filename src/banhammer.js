@@ -28,7 +28,7 @@ const startMagic = function(files) {
   let blob = new Blob([files[file]], {
     type: "text/plain"
   });
-  reader.onload = () => {
+  reader.onload = function() {
 
     let lines = this.result.split('\n');
     let badAddresses = [];
