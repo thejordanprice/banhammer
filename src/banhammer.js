@@ -63,18 +63,28 @@ const startMagic = function(files) {
       };
       output.append('permit ip any any\n');
     };
+    
     if (typeSelector.value === 'iptables') {
       for (let ip in badAddresses) {
         let string = 'sudo iptables -A INPUT -s ' + badAddresses[ip] + ' -j DROP\n';
         output.append(string);
       };
     };
+    
     if (typeSelector.value === 'Mikrotik RouterBoard') {
       for (let ip in badAddresses) {
         let string = '/ip firewall filter add action=drop chain=input comment=\'BANNED\' in-interface=ether1 src-address=' + badAddresses[ip] + '\n';
         output.append(string);
       };
     };
+    
+    if (typeSelector.value === 'pfSense') {
+      for (let ip in badAddresses) {
+        let string = 'easyrule block wan ' + badAddresses[ip] + '\n';
+        output.append(string);
+      };
+    };
+    
     if (typeSelector.value === 'UFW') {
       for (let ip in badAddresses) {
         let string = 'sudo ufw deny from ' + badAddresses[ip] + ' to any\n';
