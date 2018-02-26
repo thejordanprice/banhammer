@@ -1,4 +1,4 @@
-# banhammer
+![Logoish](https://i.imgur.com/xRC51X0.png)
 
 [![GitHub issues](https://img.shields.io/github/issues/thejordanprice/banhammer.svg)](https://github.com/thejordanprice/banhammer/issues)
 [![GitHub stars](https://img.shields.io/github/stars/thejordanprice/banhammer.svg)](https://github.com/thejordanprice/banhammer/stargazers)
